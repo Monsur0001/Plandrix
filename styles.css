@@ -1510,3 +1510,25 @@ body {
     line-height: 1;
   }
 }
+/*My Edit*/
+.btn-primary:hover {
+  background-color: #71797E;
+}
+
+.hover\:text-primary-700:hover {
+  color: #71797E;
+}
+
+.text-blue-600 {
+  color: #71797E / var(--tw-text-opacity, 1);
+}
+
+#svg-color {
+  color: navy;
+}
+
+#border-color-team {
+  border-block-color: navy;
+    
+}
+
