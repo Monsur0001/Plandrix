@@ -1531,4 +1531,10 @@ body {
   border-block-color: navy;
     
 }
+  .logos {
+  max-width: 150px;
+  padding-top: 25px;
+}
+
+
 
