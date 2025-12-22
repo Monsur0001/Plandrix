@@ -766,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = Object.fromEntries(new FormData(form));
 
     try {
-      const res = await fetch('https://YOUR_WORKER_SUBDOMAIN.workers.dev', {
+      const res = await fetch('https://contact-form-worker.monsuromotunde-abdulrahman.workers.dev', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
