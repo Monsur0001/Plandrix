@@ -799,12 +799,9 @@
         </svg></a>
     <script>
         function selectTime(time) {
-            documents.getElementById("booking_time").value = time;
-            console.log("Selected booking time:", time);
-        }
-        function selectTime(time) {
-            document.getElementById("selectedTime").value = time;
-            alert("selected time: " + time);
+            const input = document.getElementById("booking_time");
+            if (!input) {
+                console.log("Selected booking time:", time);
         }
     </script>
    
