@@ -78,83 +78,133 @@
   action="https://plandrix.co.uk/contact-form"
   class="bg-background rounded-card p-6 shadow-card border border-border max-w-xl mx-auto"
 >
-  <!-- FORM TYPE -->
-  <input type="hidden" name="formType" value="booking" />
-  <input type="hidden" name="booking_time" id="booking_time" />
 
-  <h3 class="text-lg font-heading text-primary mb-6 text-center">
+  <!-- Required -->
+  <input type="hidden" name="formType" value="booking">
+  <input type="hidden" name="booking_time" id="booking_time">
+
+  <h3 class="text-lg font-heading text-primary mb-4">
     Book a Cleaning Service
   </h3>
 
-  <!-- CONTACT DETAILS -->
-  <div class="space-y-4 mb-6">
-    <div>
-      <label class="block text-sm font-medium mb-1">Name</label>
+  <div class="grid grid-cols-2 gap-4">
+
+    <!-- Name (FULL WIDTH) -->
+    <div class="col-span-2">
+      <label class="block text-sm font-medium text-text-secondary mb-1">
+        Name / Company
+      </label>
       <input
         type="text"
         name="full_name"
         required
-        class="input-field w-full"
-      />
+        class="input-field"
+      >
     </div>
 
+    <!-- Email -->
     <div>
-      <label class="block text-sm font-medium mb-1">Email</label>
+      <label class="block text-sm font-medium text-text-secondary mb-1">
+        Email
+      </label>
       <input
         type="email"
         name="email"
         required
-        class="input-field w-full"
-      />
+        class="input-field"
+      >
     </div>
 
+    <!-- Phone -->
     <div>
-      <label class="block text-sm font-medium mb-1">Phone</label>
+      <label class="block text-sm font-medium text-text-secondary mb-1">
+        Phone
+      </label>
       <input
         type="tel"
         name="phone"
         required
-        class="input-field w-full"
-      />
+        class="input-field"
+      >
     </div>
-  </div>
 
-  <!-- BOOKING DETAILS -->
-  <div class="space-y-4 mb-6">
+    <!-- Service Type -->
     <div>
-      <label class="block text-sm font-medium mb-1">Service Type</label>
+      <label class="block text-sm font-medium text-text-secondary mb-1">
+        Service Type
+      </label>
       <select
         name="service_type"
         required
-        class="input-field w-full"
+        class="input-field"
       >
         <option value="">Select a service</option>
-        <option>End-of-Tenancy Cleaning</option>
+        <option>End of Tenancy Cleaning</option>
         <option>Commercial & Office Cleaning</option>
         <option>Deep Cleaning & Property Turnarounds</option>
         <option>Post Construction & After Builder Cleaning</option>
       </select>
     </div>
 
+    <!-- Date -->
     <div>
-      <label class="block text-sm font-medium mb-1">Preferred Date</label>
+      <label class="block text-sm font-medium text-text-secondary mb-1">
+        Preferred Date
+      </label>
       <input
         type="date"
         name="booking_date"
         required
-        class="input-field w-full"
-      />
+        class="input-field"
+      >
     </div>
-  </div>
 
-  <!-- SUBMIT -->
-  <button
-    type="submit"
-    class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:opacity-90 transition"
-  >
-    Book Now
-  </button>
+    <!-- Time Selection (FULL WIDTH) -->
+    <div class="col-span-2">
+      <label class="block text-sm font-medium text-text-secondary mb-2">
+        Available Time
+      </label>
+
+      <div class="grid grid-cols-3 gap-2">
+        <button
+          type="button"
+          onclick="selectTime('Morning')"
+          class="px-3 py-2 text-sm border border-border rounded-card hover:border-primary hover:text-primary transition"
+        >
+          Morning
+        </button>
+
+        <button
+          type="button"
+          onclick="selectTime('Afternoon')"
+          class="px-3 py-2 text-sm border border-border rounded-card hover:border-primary hover:text-primary transition"
+        >
+          Afternoon
+        </button>
+
+        <button
+          type="button"
+          onclick="selectTime('Evening')"
+          class="px-3 py-2 text-sm border border-border rounded-card hover:border-primary hover:text-primary transition"
+        >
+          Evening
+        </button>
+      </div>
+    </div>
+
+    <!-- Submit (FULL WIDTH) -->
+    <div class="col-span-2">
+      <button
+        type="submit"
+        class="w-full bg-primary text-white py-3 rounded-card font-semibold hover:opacity-90 transition"
+      >
+        Book Now
+      </button>
+    </div>
+
+  </div>
 </form>
+
 
                 </div>
                 <div class="relative">
