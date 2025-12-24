@@ -76,10 +76,10 @@
                     <form
   method="POST"
   action="https://plandrix.co.uk/contact-form"
-  class="bg-background rounded-card p-6 shadow-card border border-border max-w-xl mx-auto"
+  class="bg-background rounded-card p-6 shadow-card border border-border"
 >
 
-  <!-- Required -->
+  <!-- REQUIRED -->
   <input type="hidden" name="formType" value="booking">
   <input type="hidden" name="booking_time" id="booking_time">
 
@@ -87,22 +87,21 @@
     Book a Cleaning Service
   </h3>
 
-  <div class="grid grid-cols-2 gap-4">
+  <!-- NAME (FULL WIDTH) -->
+  <div class="mb-4">
+    <label class="block text-sm font-medium text-text-secondary mb-1">
+      Name / Company
+    </label>
+    <input
+      type="text"
+      name="full_name"
+      required
+      class="input-field w-full"
+    >
+  </div>
 
-    <!-- Name (FULL WIDTH) -->
-    <div class="col-span-2">
-      <label class="block text-sm font-medium text-text-secondary mb-1">
-        Name / Company
-      </label>
-      <input
-        type="text"
-        name="full_name"
-        required
-        class="input-field"
-      >
-    </div>
-
-    <!-- Email -->
+  <!-- EMAIL + PHONE (50 / 50) -->
+  <div class="grid grid-cols-2 gap-4 mb-4">
     <div>
       <label class="block text-sm font-medium text-text-secondary mb-1">
         Email
@@ -111,11 +110,10 @@
         type="email"
         name="email"
         required
-        class="input-field"
+        class="input-field w-full"
       >
     </div>
 
-    <!-- Phone -->
     <div>
       <label class="block text-sm font-medium text-text-secondary mb-1">
         Phone
@@ -124,11 +122,13 @@
         type="tel"
         name="phone"
         required
-        class="input-field"
+        class="input-field w-full"
       >
     </div>
+  </div>
 
-    <!-- Service Type -->
+  <!-- SERVICE + DATE (50 / 50) -->
+  <div class="grid grid-cols-2 gap-4 mb-4">
     <div>
       <label class="block text-sm font-medium text-text-secondary mb-1">
         Service Type
@@ -136,7 +136,7 @@
       <select
         name="service_type"
         required
-        class="input-field"
+        class="input-field w-full"
       >
         <option value="">Select a service</option>
         <option>End of Tenancy Cleaning</option>
@@ -146,7 +146,6 @@
       </select>
     </div>
 
-    <!-- Date -->
     <div>
       <label class="block text-sm font-medium text-text-secondary mb-1">
         Preferred Date
@@ -155,54 +154,38 @@
         type="date"
         name="booking_date"
         required
-        class="input-field"
+        class="input-field w-full"
       >
     </div>
+  </div>
 
-    <!-- Time Selection (FULL WIDTH) -->
-    <div class="col-span-2">
-      <label class="block text-sm font-medium text-text-secondary mb-2">
-        Available Time
-      </label>
+  <!-- TIME (FULL WIDTH) -->
+  <div class="mb-6">
+    <label class="block text-sm font-medium text-text-secondary mb-2">
+      Available Time
+    </label>
 
-      <div class="grid grid-cols-3 gap-2">
-        <button
-          type="button"
-          onclick="selectTime('Morning')"
-          class="px-3 py-2 text-sm border border-border rounded-card hover:border-primary hover:text-primary transition"
-        >
-          Morning
-        </button>
-
-        <button
-          type="button"
-          onclick="selectTime('Afternoon')"
-          class="px-3 py-2 text-sm border border-border rounded-card hover:border-primary hover:text-primary transition"
-        >
-          Afternoon
-        </button>
-
-        <button
-          type="button"
-          onclick="selectTime('Evening')"
-          class="px-3 py-2 text-sm border border-border rounded-card hover:border-primary hover:text-primary transition"
-        >
-          Evening
-        </button>
-      </div>
-    </div>
-
-    <!-- Submit (FULL WIDTH) -->
-    <div class="col-span-2">
-      <button
-        type="submit"
-        class="w-full bg-primary text-white py-3 rounded-card font-semibold hover:opacity-90 transition"
-      >
-        Book Now
+    <div class="grid grid-cols-3 gap-2">
+      <button type="button" onclick="selectTime('Morning')" class="time-btn">
+        Morning
+      </button>
+      <button type="button" onclick="selectTime('Afternoon')" class="time-btn">
+        Afternoon
+      </button>
+      <button type="button" onclick="selectTime('Evening')" class="time-btn">
+        Evening
       </button>
     </div>
-
   </div>
+
+  <!-- SUBMIT -->
+  <button
+    type="submit"
+    class="btn-primary w-full"
+  >
+    Book Now
+  </button>
+
 </form>
 
 
