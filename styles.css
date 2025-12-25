@@ -1536,6 +1536,25 @@ body {
   padding-top: 25px;
 }
 
+.time-btn {
+  border: 1px solid #0b1c2d; /* navy */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #0b1c2d;
+  transition: all 0.2s ease;
+}
+
+.time-btn:hover {
+  background-color: #e6ecf2;
+}
+
+.time-btn.active {
+  background-color: #0b1c2d; /* NAVY */
+  color: #ffffff;
+  border-color: #0b1c2d;
+}
 
 
 
