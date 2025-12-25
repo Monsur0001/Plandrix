@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1449,15 +1455,10 @@ body {
   background-color: rgb(5 150 105 / 0.2);
 }
 
-@media (min-width: 640px){
-  .sm\:inline-flex{
-    display: inline-flex;
-  }
-
-  .sm\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
 }
 
 @media (min-width: 768px){
@@ -1536,18 +1537,5 @@ body {
   padding-top: 25px;
   }
 
-html, body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
-}
-* {
-  max-width: 100%;
-}
-body {
-  position: relative;
-  overflow-x: hidden;
-}
 
 
