@@ -1551,8 +1551,8 @@ body {
 }
 
 .time-btn.active {
-  background: #0a2540;             /* NAVY */
-  color: white;
+  background: #0a2540; !important             /* NAVY */
+  color: white; !important;
   border-color: #0a2540;
 }
 
