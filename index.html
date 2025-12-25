@@ -869,8 +869,12 @@
  <script>
 function selectTime(time, button) {
   const input = document.getElementById('booking_time');
-  if (!input) return;
+  if (!input) {
+      console.error('booking_time input not found');
+      return;
+  }
     input.value = time;
+    
     document.querySelectorAll('.time-btn').forEach(btn => {
         btn.classList.remove('active');
     });
