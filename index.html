@@ -878,20 +878,6 @@ function selectTime(time) {
   console.log("Selected booking time:", time);
 }
 
-        
-  function selectTime(button, time) {
-    // Store value
-    document.getElementById('booking_time').value = time;
-
-    // Remove active state from all buttons
-    document.querySelectorAll('.time-btn').forEach(btn => {
-      btn.classList.remove('time-active');
-    });
-
-    // Activate selected button
-    button.classList.add('time-active');
-  }
-
 </script>
 
    
