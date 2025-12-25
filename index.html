@@ -166,16 +166,17 @@
     </label>
 
     <div class="grid grid-cols-3 gap-2">
-      <button type="button" onclick="selectTime('Morning')" class="time-btn">
-        Morning
-      </button>
-      <button type="button" onclick="selectTime('Afternoon')" class="time-btn">
-        Afternoon
-      </button>
-      <button type="button" onclick="selectTime('Evening')" class="time-btn">
-        Evening
-      </button>
-    </div>
+  <button type="button" onclick="selectTime('Morning')" class="time-btn">
+    Morning
+  </button>
+  <button type="button" onclick="selectTime('Afternoon')" class="time-btn">
+    Afternoon
+  </button>
+  <button type="button" onclick="selectTime('Evening')" class="time-btn">
+    Evening
+  </button>
+</div>
+
   </div>
 
   <!-- SUBMIT -->
@@ -876,6 +877,21 @@ function selectTime(time) {
   input.value = time;
   console.log("Selected booking time:", time);
 }
+
+        
+  function selectTime(button, time) {
+    // Store value
+    document.getElementById('booking_time').value = time;
+
+    // Remove active state from all buttons
+    document.querySelectorAll('.time-btn').forEach(btn => {
+      btn.classList.remove('time-active');
+    });
+
+    // Activate selected button
+    button.classList.add('time-active');
+  }
+
 </script>
 
    
