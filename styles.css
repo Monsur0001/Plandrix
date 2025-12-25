@@ -1539,9 +1539,15 @@ body {
 html, body {
   overflow-x: hidden !important;
   width: 100% !important;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 * {
   max-width: 100%;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
 }
 
 
