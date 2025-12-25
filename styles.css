@@ -1536,5 +1536,14 @@ body {
   padding-top: 25px;
 }
 
+.time-btn {
+  @apply px-3 py-2 text-sm border border-border rounded-card transition;
+}
+
+.time-active {
+  @apply bg-primary text-white border-primary;
+}
+
+
 
 
