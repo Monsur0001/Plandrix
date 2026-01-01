@@ -238,7 +238,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="./images/team.svg" />
+              <embed class="svg-size" src="/team.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">Background-Checked Teams</h3>
@@ -252,7 +252,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="./images/star.svg" />
+              <embed class="svg-size" src="/star.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">
@@ -366,7 +366,7 @@
             </div>
           </div>
           <div class="col-md-4 themed-grid-col prof-team container">
-            <embed class="prof-svg" src="./images/team.svg" />
+            <embed class="prof-svg" src="/team.svg" />
             <h2>Professional Team</h2>
             <p class="lead">Trained and Certified Cleaners</p>
           </div>
@@ -400,7 +400,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="Bootstrap"
                       width="32"
                       height="32"
@@ -440,7 +440,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('./images/EndOfTenancy.png')"
+              style="background-image: url('/EndOfTenancy.png')"
             >
               <div
                 class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
@@ -491,7 +491,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('./images/deepCleaning.png')"
+              style="background-image: url('/deepCleaning.png')"
             >
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
@@ -500,7 +500,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="plandrixlogo"
                       width="32"
                       height="32"
@@ -540,7 +540,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('./images/constructionC.png')"
+              style="background-image: url('/constructionC.png')"
             >
               <div
                 class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
@@ -551,7 +551,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="Bootstrap"
                       width="32"
                       height="32"
@@ -1002,7 +1002,7 @@
           aria-label="Bootstrap"
         >
           <img
-            src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+            src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
             alt="plandrixlogo"
           />
         </a>
@@ -1118,5 +1118,13 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.getElementByID("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        emailjs.send('
+    </script>
   </body>
 </html>
