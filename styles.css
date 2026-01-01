@@ -1,158 +1,524 @@
-/* ========== RESET + BASE ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* Brand Colors & Fonts*/
+:root {
+  --brand-primary: #2B5A87;
+  --brand-secondary: #EFF6FF;
+
+  --brand-font: 'Inter', sans-serif;
+
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: Inter, sans-serif;
-  background: #F9FAFB;
-  color: #233044;
+
+
+/* Logo */
+.logo {
+  width: 200px;
+}
+
+
+
+.navbar {
+  background-color: white !important;
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0;
+}
+
+body {
+  font-family: var(--brand-font);
+  background-color: var(--brand-secondary);
   font-size: 16px;
+  line-height: 1.7;
+}
+
+h1, h2, h3 h4 {
+  font-weight: 600 !important;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+p {
+  max-width: 680px;
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.span {
+  color: var(--brand-primary);
+}
+
+#hero-section {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--brand-primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 500px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--brand-secondary) 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: slategrey;
+  }
+
+  .service-card {
+    border: 1px solid slategrey;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+
+
+.booking-form,
+.hero-image {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 24px;
+}
+.booking-form {
+  height: 650px;
+}
+
+
+
+.card-img {
+  height: 500px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 5px;
+}
+
+
+
+
+.my-features {
+  background-color: white;
+}
+
+.svg-size {
+  width: 30px;
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.8rem;
+}
+
+.lead {
+  text-align: left;
+  text-justify: inter-word;
+}
+
+.prof-team {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 24px;
+}
+
+.mission-text {
+  text-align: left;
+}
+
+.prof-svg {
+  width: 50px;
+  margin-top: 25%;
+}
+
+.carousel-inner {
+  height: 500px;
+  border: 1px solid white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.carousel-item {
+  width: fit-content;
+}
+
+
+
+
+
+.card-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-link {
+  color: white;
+}
+
+.album-bg {
+  background-color: var(--brand-secondary);
+}
+
+.ba-card-img-top {
+  height: 250px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.before {
+  color: white;
+  background-color: red;
+}
+
+.after {
+  color: white;
+  background-color: green;
+}
+
+.ready-sec {
+  background-color: white;
+  text-align: center;
+  height: 400px;
+}
+
+.ready-parag, .get-ready-parag {
+  text-align: center !important;
+}
+
+/*Areas we Covera Section*/
+
+/* SECTION */
+.areas-section {
+  background: #eff6ff;
+  padding: 4rem 0;
+}
+
+.areas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* HEADER */
+.areas-header {
+  max-width: 650px;
+  margin-bottom: 3rem;
+}
+
+.areas-header h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.areas-header p {
+  color: #555;
   line-height: 1.6;
 }
 
-/* ========== GLOBAL CONTAINER ========== */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+/* GRID */
+.areas-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center; /* THIS centers the emergency card */
 }
 
-/* ========== HEADER ========== */
-header {
-  background: transparent;
-  padding: 1rem 0;
+/* MAP CARD */
+.map-card {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.map-card img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* MAP FOOTER */
+.map-footer {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .logo {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #233044;
+.map-footer span {
+  font-size: 0.9rem;
+  color: #555;
 }
 
-header .btn-book {
-  background: #28548A;
-  color: white;
-  padding: 0.75rem 1.25rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* ========== HERO TEXT ========== */
-.hero-title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 1rem;
-  color: #0F274C;
-}
-
-/* ========== FORM STYLES ========== */
-form {
-  background: white;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-form .form-row {
+/* EMERGENCY CARD */
+.emergency-card {
+  background: #f3caca;
+  border-radius: 16px;
+  padding: 1.5rem;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: red solid;
+  width: 500px;
+}
+
+.emergency-left {
+  display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
-form .form-row input,
-form .form-row select {
-  width: 100%;
-  padding: 0.85rem;
-  border: 1px solid #D1D5DB;
-  border-radius: 6px;
-  font-size: 1rem;
-  color: #334155;
+.emergency-left .icon {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
 
-form .form-half {
-  flex: 1 1 45%;
-}
-
-/* ========== TIME BUTTONS ========== */
-.time-selector {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.time-btn {
-  flex: 1;
-  padding: 0.75rem;
-  border: 2px solid #0A2540;
-  background: #FFFFFF;
-  color: #0A2540;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
-}
-
-.time-btn.selected,
-.time-btn:hover {
-  background: #0A2540;
-  color: #FFFFFF;
-}
-
-/* ========== SUBMIT BUTTON ========== */
-.btn-submit {
-  background: #28548A;
-  color: #FFFFFF;
-  width: 100%;
-  padding: 0.85rem;
+/* BUTTON */
+.primary-btn {
+  background: #1e293b;
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-/* ========== GENERAL TYPOGRAPHY ========== */
-h3 {
-  font-size: 1.5rem;
+/* MOBILE */
+@media (max-width: 900px) {
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-card {
+    margin-top: 2rem;
+  }
+
+  .map-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+.get-ready {
+  background-color: rgb(30 41 59);
+  text-align: center;
+  color: white;
+}
+
+/*Contact us Section*/
+
+/* ===== CONTACT SECTION ONLY ===== */
+
+.contact-exact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.contact-exact__title {
+  text-align: center;
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #0F274C;
+  margin-bottom: 8px;
 }
 
-label {
+.contact-exact__subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 56px;
+}
+
+.contact-exact__layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* LEFT SIDE */
+.contact-exact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-exact__item {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-exact__icon {
+  font-size: 20px;
+  color: #1f4e79;
+  line-height: 1.4;
+}
+
+.contact-exact__item strong {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #334155;
+  margin-bottom: 4px;
 }
 
-/* ========== RESPONSIVE LAYOUT ========== */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 1.75rem;
-  }
+.contact-exact__item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
 
-  header .btn-book {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+/* RIGHT SIDE FORM CARD */
+.contact-exact__form {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* FORM GRID */
+.contact-exact__form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ce-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.ce-full {
+  grid-column: 1 / -1;
+}
+
+.ce-field label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.ce-field input,
+.ce-field select,
+.ce-field textarea {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.ce-field textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.ce-field input:focus,
+.ce-field select:focus,
+.ce-field textarea:focus {
+  outline: none;
+  border-color: #1f4e79;
+}
+
+/* BUTTON */
+.contact-exact__form button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  background: #1f4e79;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-exact__form button:hover {
+  background: #163c5f;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-exact__layout {
+    grid-template-columns: 1fr;
   }
+}
+
+.footer {
+  background-color: #1e293b;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+  font-size: 14px;
+}
+
+.footer-text {
+  color: white !important;
+}
+
+.whatsapp-ico{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: fixed;
+    bottom: 20px;
+    right : 20px;
+    z-index: 10;
+}
+
+.whatsapp-ico:hover{
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
 }
 
 @media (max-width: 480px) {
-  .form-row {
-    flex-direction: column;
+  .whatsapp-float {
+    bottom: 16px;
+    right: 16px;
   }
 }
