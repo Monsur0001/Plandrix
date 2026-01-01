@@ -105,104 +105,65 @@
           <div class="booking-form">
             <h2>Book Your Cleaning Service</h2>
             <form
-              method="POST"
-              action="https://plandrix.co.uk/contact-form"
-              class="row g-3"
-            >
-              <input type="hidden" name="formType" value="booking" />
-              <div class="col-12">
-                <label for="inputName" class="form-label">Name</label>
-                <input
-                  type="text"
-                  name="full_name"
-                  required
-                  class="form-control"
-                  id="inputName"
-                />
-              </div>
-              <div class="col-6">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  class="form-control"
-                  id="inputEmail"
-                />
-              </div>
-              <div class="col-6">
-                <label for="tel" class="form-label">phone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  class="form-control"
-                  id="inputtel"
-                  placeholder="07 *** ***"
-                />
-              </div>
-              <div class="col-6">
-                <label for="inputCity" class="form-label">City</label>
-                <select
-                  name="city"
-                  required
-                  id="inputState"
-                  class="form-select"
-                >
-                  <option selected>Choose...</option>
-                  <option>Manchester</option>
-                </select>
-              </div>
-              <div class="col-6">
-                <label for="inputService" class="form-label">Service</label>
-                <select
-                  name="service_type"
-                  required
-                  id="inputService"
-                  class="form-select"
-                >
-                  <option selected>Choose...</option>
-                  <option>End-of-Tenancy</option>
-                </select>
-              </div>
-              <div class="col-6">
-                <label for="tel" class="form-label">Date</label>
-                <input
-                  type="date"
-                  name="booking_date"
-                  class="form-control"
-                  id="inputtel"
-                  placeholder=""
-                />
-              </div>
-              <div class="col-6">
-                <label for="inputZip" class="form-label">Time</label>
-                <input
-                  type="time"
-                  name="booking_time"
-                  class="form-control"
-                  id="inputZip"
-                />
-              </div>
-              <div class="form-floating">
-                <p>Additional Infortmation</p>
-                <textarea
-                  class="form-control"
-                  name="additional_info"
-                  placeholder="Leave a comment here"
-                  id="floatingTextarea2"
-                  style="height: 100px"
-                ></textarea>
-                <label for="floatingTextarea2"
-                  >Please tell us about your cleaning needs</label
-                >
-              </div>
+  id="bookingForm"
+  method="POST"
+  class="row g-3"
+>
+  <input type="hidden" name="formType" value="booking" />
 
-              <button class="btn btn-primary" type="submit">Book</button>
-              <p class="text-center">
-                Free estimates • No hidden fees • 100% satisfaction guarantee
-              </p>
-            </form>
+  <div class="col-12">
+    <label>Name</label>
+    <input type="text" name="full_name" required />
+  </div>
+
+  <div class="col-6">
+    <label>Email</label>
+    <input type="email" name="email" required />
+  </div>
+
+  <div class="col-6">
+    <label>Phone</label>
+    <input type="tel" name="phone" required />
+  </div>
+
+  <div class="col-6">
+    <label>City</label>
+    <select name="city" required>
+      <option value="">Choose...</option>
+      <option value="Manchester">Manchester</option>
+    </select>
+  </div>
+
+  <div class="col-6">
+    <label>Service</label>
+    <select name="service_type" required>
+      <option value="">Choose...</option>
+      <option value="End-of-Tenancy">End-of-Tenancy</option>
+    </select>
+  </div>
+
+  <div class="col-6">
+    <label>Date</label>
+    <input type="date" name="booking_date" required />
+  </div>
+
+  <div class="col-6">
+    <label>Time</label>
+    <input type="time" name="booking_time" required />
+  </div>
+
+  <div class="col-12">
+    <label>Additional Information</label>
+    <textarea name="additional_info"></textarea>
+  </div>
+
+  <button type="submit">Book</button>
+  <p>  Free estimates • No hidden fees • 100% satisfaction guarantee </p>
+              
+</form>
+
+               
+              
           </div>
         </div>
 
@@ -1119,37 +1080,30 @@
       crossorigin="anonymous"
     ></script>
     <script>
-  document.querySelectorAll('.time-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-      // Save value for backend
-      document.getElementById('booking_time').value = btn.dataset.time;
+  const form = e.target;
+  const formData = new FormData(form);
 
-      // Visual feedback
-      document.querySelectorAll('.time-btn').forEach(b =>
-        b.classList.remove('selected')
-      );
-      btn.classList.add('selected');
-    });
-  });
-</script>
-<script>
-  document
-  .getElementById('bookingForm')
-  .addEventListener('submit', async e => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-
-    const res = await fetch('/submit', {
-      method: 'POST',
-      body: formData
-    });
-
-    console.log(await res.text());
+  const res = await fetch('https://plandrix.co.uk/contact-form', {
+    method: 'POST',
+    body: formData
   });
 
+  const text = await res.text();
+  console.log(text);
+
+  if (res.ok) {
+    alert('Booking submitted successfully ✅');
+    form.reset();
+  } else {
+    alert('Submission failed ❌');
+  }
+});
 </script>
+
+
 
     
   </body>
