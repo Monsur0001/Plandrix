@@ -1118,6 +1118,22 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script>
+  document.querySelectorAll('.time-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      // Save value for backend
+      document.getElementById('booking_time').value = btn.dataset.time;
+
+      // Visual feedback
+      document.querySelectorAll('.time-btn').forEach(b =>
+        b.classList.remove('selected')
+      );
+      btn.classList.add('selected');
+    });
+  });
+</script>
+
     
   </body>
 </html>
