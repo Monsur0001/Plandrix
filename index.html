@@ -102,71 +102,109 @@
 
           <!-- Instant Booking Widget-->
 
-          <div class="booking-form">
+         <div class="booking-form">
             <h2>Book Your Cleaning Service</h2>
             <form
-  id="bookingForm"
-  method="POST"
-  class="row g-3"
->
-  <input type="hidden" name="formType" value="booking" />
+              method="POST"
+              action="https://plandrix.co.uk/contact-form"
+              class="row g-3"
+            >
+              <input type="hidden" name="formType" value="booking" />
+              <input type="hidden" name="booking_time" id="booking_time" />
+              <div class="col-12">
+                <label for="inputName" class="form-label">Name</label>
+                <input
+                  type="text"
+                  name="full_name"
+                  required
+                  class="form-control"
+                  id="inputName"
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="form-control"
+                  id="inputEmail"
+                />
+              </div>
+              <div class="col-6">
+                <label for="tel" class="form-label">phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  class="form-control"
+                  id="inputtel"
+                  placeholder="07 *** ***"
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputCity" class="form-label">City</label>
+                <select
+                  name="city"
+                  required
+                  id="inputState"
+                  class="form-select"
+                >
+                  <option selected>Choose...</option>
+                  <option>Manchester</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="inputService" class="form-label">Service</label>
+                <select
+                  name="service_type"
+                  required
+                  id="inputService"
+                  class="form-select"
+                >
+                  <option selected>Choose...</option>
+                  <option>End-of-Tenancy</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="tel" class="form-label">Date</label>
+                <input
+                  type="date"
+                  name="booking_date"
+                  class="form-control"
+                  id="inputtel"
+                  placeholder=""
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputZip" class="form-label">Time</label>
+                <input
+                  type="time"
+                  name="booking_time"
+                  class="form-control"
+                  id="inputZip"
+                />
+              </div>
+              <div class="form-floating">
+                <p>Additional Infortmation</p>
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                ></textarea>
+                <label for="floatingTextarea2"
+                  >Please tell us about your cleaning needs</label
+                >
+              </div>
 
-  <div class="col-12">
-    <label>Name</label>
-    <input type="text" name="full_name" required />
-  </div>
-
-  <div class="col-6">
-    <label>Email</label>
-    <input type="email" name="email" required />
-  </div>
-
-  <div class="col-6">
-    <label>Phone</label>
-    <input type="tel" name="phone" required />
-  </div>
-
-  <div class="col-6">
-    <label>City</label>
-    <select name="city" required>
-      <option value="">Choose...</option>
-      <option value="Manchester">Manchester</option>
-    </select>
-  </div>
-
-  <div class="col-6">
-    <label>Service</label>
-    <select name="service_type" required>
-      <option value="">Choose...</option>
-      <option value="End-of-Tenancy">End-of-Tenancy</option>
-    </select>
-  </div>
-
-  <div class="col-6">
-    <label>Date</label>
-    <input type="date" name="booking_date" required />
-  </div>
-
-  <div class="col-6">
-    <label>Time</label>
-    <input type="time" name="booking_time" required />
-  </div>
-
-  <div class="col-12">
-    <label>Additional Information</label>
-    <textarea name="additional_info"></textarea>
-  </div>
-
-  <button type="submit">Book</button>
-  <p>  Free estimates • No hidden fees • 100% satisfaction guarantee </p>
-              
-</form>
-
-               
-              
+              <button class="btn btn-primary" type="submit">Book</button>
+              <p class="text-center">
+                Free estimates • No hidden fees • 100% satisfaction guarantee
+              </p>
+            </form>
           </div>
         </div>
-
         <div
           class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg hero-card hero-image hero mb-5"
         >
