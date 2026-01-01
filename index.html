@@ -105,6 +105,7 @@
          <div class="booking-form">
             <h2>Book Your Cleaning Service</h2>
             <form
+              id="bookingForm"
               method="POST"
               action="https://plandrix.co.uk/contact-form"
               class="row g-3"
@@ -138,7 +139,7 @@
                   name="phone"
                   required
                   class="form-control"
-                  id="inputtel"
+                  id="inputPhone"
                   placeholder="07 *** ***"
                 />
               </div>
@@ -147,10 +148,10 @@
                 <select
                   name="city"
                   required
-                  id="inputState"
+                  id="inputCity"
                   class="form-select"
                 >
-                  <option selected>Choose...</option>
+                  <option value="">Choose...</option>
                   <option>Manchester</option>
                 </select>
               </div>
@@ -162,27 +163,27 @@
                   id="inputService"
                   class="form-select"
                 >
-                  <option selected>Choose...</option>
+                  <option value="">Choose...</option>
                   <option>End-of-Tenancy</option>
                 </select>
               </div>
               <div class="col-6">
-                <label for="tel" class="form-label">Date</label>
+                <label for="inputDate" class="form-label">Date</label>
                 <input
                   type="date"
                   name="booking_date"
                   class="form-control"
-                  id="inputtel"
+                  id="inputDate"
                   placeholder=""
                 />
               </div>
               <div class="col-6">
-                <label for="inputZip" class="form-label">Time</label>
+                <label for="inputTime" class="form-label">Time</label>
                 <input
                   type="time"
                   name="booking_time"
                   class="form-control"
-                  id="inputZip"
+                  id="inputTime"
                 />
               </div>
               <div class="form-floating">
