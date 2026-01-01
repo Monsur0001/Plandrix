@@ -100,112 +100,123 @@
           </p>
           <br />
 
-          <!-- Instant Booking Widget-->
+          <!-- Instant Booking Widget -->
+<div class="booking-form">
+  <h2>Book Your Cleaning Service</h2>
 
-         <div class="booking-form">
-            <h2>Book Your Cleaning Service</h2>
-            <form
-              id="bookingForm"
-              method="POST"
-              action="https://plandrix.co.uk/contact-form"
-              class="row g-3"
-            >
-              <input type="hidden" name="formType" value="booking" />
-              <input type="hidden" name="booking_time" id="booking_time" />
-              <div class="col-12">
-                <label for="inputName" class="form-label">Name</label>
-                <input
-                  type="text"
-                  name="full_name"
-                  required
-                  class="form-control"
-                  id="inputName"
-                />
-              </div>
-              <div class="col-6">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  class="form-control"
-                  id="inputEmail"
-                />
-              </div>
-              <div class="col-6">
-                <label for="tel" class="form-label">phone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  class="form-control"
-                  id="inputPhone"
-                  placeholder="07 *** ***"
-                />
-              </div>
-              <div class="col-6">
-                <label for="inputCity" class="form-label">City</label>
-                <select
-                  name="city"
-                  required
-                  id="inputCity"
-                  class="form-select"
-                >
-                  <option value="">Choose...</option>
-                  <option>Manchester</option>
-                </select>
-              </div>
-              <div class="col-6">
-                <label for="inputService" class="form-label">Service</label>
-                <select
-                  name="service_type"
-                  required
-                  id="inputService"
-                  class="form-select"
-                >
-                  <option value="">Choose...</option>
-                  <option>End-of-Tenancy</option>
-                </select>
-              </div>
-              <div class="col-6">
-                <label for="inputDate" class="form-label">Date</label>
-                <input
-                  type="date"
-                  name="booking_date"
-                  class="form-control"
-                  id="inputDate"
-                  placeholder=""
-                />
-              </div>
-              <div class="col-6">
-                <label for="inputTime" class="form-label">Time</label>
-                <input
-                  type="time"
-                  name="booking_time"
-                  class="form-control"
-                  id="inputTime"
-                />
-              </div>
-              <div class="form-floating">
-                <p>Additional Infortmation</p>
-                <textarea
-                  class="form-control"
-                  placeholder="Leave a comment here"
-                  id="floatingTextarea2"
-                  style="height: 100px"
-                ></textarea>
-                <label for="floatingTextarea2"
-                  >Please tell us about your cleaning needs</label
-                >
-              </div>
+  <form
+    id="bookingForm"
+    method="POST"
+    action="https://plandrix.co.uk/contact-form"
+    class="row g-3"
+  >
+    <input type="hidden" name="formType" value="booking" />
 
-              <button class="btn btn-primary" type="submit">Book</button>
-              <p class="text-center">
-                Free estimates • No hidden fees • 100% satisfaction guarantee
-              </p>
-            </form>
-          </div>
-        </div>
+    <div class="col-12">
+      <label for="inputName" class="form-label">Name</label>
+      <input
+        type="text"
+        name="full_name"
+        required
+        class="form-control"
+        id="inputName"
+      />
+    </div>
+
+    <div class="col-6">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        required
+        class="form-control"
+        id="inputEmail"
+      />
+    </div>
+
+    <div class="col-6">
+      <label for="inputPhone" class="form-label">Phone</label>
+      <input
+        type="tel"
+        name="phone"
+        required
+        class="form-control"
+        id="inputPhone"
+        placeholder="07 *** ***"
+      />
+    </div>
+
+    <div class="col-6">
+      <label for="inputCity" class="form-label">City</label>
+      <select
+        name="city"
+        required
+        id="inputCity"
+        class="form-select"
+      >
+        <option value="" disabled selected>Choose...</option>
+        <option value="Manchester">Manchester</option>
+      </select>
+    </div>
+
+    <div class="col-6">
+      <label for="inputService" class="form-label">Service</label>
+      <select
+        name="service_type"
+        required
+        id="inputService"
+        class="form-select"
+      >
+        <option value="" disabled selected>Choose...</option>
+        <option value="End-of-Tenancy">End-of-Tenancy</option>
+      </select>
+    </div>
+
+    <div class="col-6">
+      <label for="bookingDate" class="form-label">Date</label>
+      <input
+        type="date"
+        name="booking_date"
+        required
+        class="form-control"
+        id="bookingDate"
+      />
+    </div>
+
+    <div class="col-6">
+      <label for="bookingTime" class="form-label">Time</label>
+      <input
+        type="time"
+        name="booking_time"
+        required
+        class="form-control"
+        id="bookingTime"
+      />
+    </div>
+
+    <div class="form-floating">
+      <p>Additional Information</p>
+      <textarea
+        class="form-control"
+        name="additional_info"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+      <label for="floatingTextarea2">
+        Please tell us about your cleaning needs
+      </label>
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+      Book
+    </button>
+
+    <p class="text-center">
+      Free estimates • No hidden fees • 100% satisfaction guarantee
+    </p>
+  </form>
+</div>
+
         <div
           class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg hero-card hero-image hero mb-5"
         >
