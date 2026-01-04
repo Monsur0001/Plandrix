@@ -15,7 +15,17 @@
   width: 200px;
 }
 
+.check-2 {
+  color: var(--brand-primary);
+}
 
+.check-bg {
+  background-color: white;
+}
+
+.contact-left {
+  text-align: left;
+}
 
 .navbar {
   background-color: white !important;
@@ -114,7 +124,7 @@ section {
   padding: 24px;
 }
 .booking-form {
-  height: 700px;
+  height: auto;
 }
 
 .area-map {
