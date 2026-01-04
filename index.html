@@ -28,7 +28,7 @@
         <a class="navbar-brand" href="https://plandrix.co.uk">
           <img
             class="logo"
-            src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+            src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
             alt="plandrixlogo" /><br
         /></a>
         <button
@@ -100,129 +100,117 @@
           </p>
           <br />
 
-          <!-- Instant Booking Widget -->
-<div class="booking-form">
-  <h2>Book Your Cleaning Service</h2>
+          <!-- Instant Booking Widget-->
 
-  <form
-    id="bookingForm"
-    method="POST"
-    action="https://plandrix.co.uk/contact-form"
-    class="row g-3"
-  >
-    <input type="hidden" name="formType" value="booking" />
+          <div class="booking-form">
+            <h2>Book Your Cleaning Service</h2>
+            <form
+              method="POST"
+              action="https://plandrix.co.uk/contact-form"
+              class="row g-3"
+            >
+              <input type="hidden" name="formType" value="booking" />
+              <input type="hidden" name="booking_time" id="booking_time" />
+              <div class="col-12">
+                <label for="inputName" class="form-label">Name</label>
+                <input
+                  type="text"
+                  name="full_name"
+                  required
+                  class="form-control"
+                  id="inputName"
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="form-control"
+                  id="inputEmail"
+                />
+              </div>
+              <div class="col-6">
+                <label for="tel" class="form-label">phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  class="form-control"
+                  id="inputtel"
+                  placeholder="07 *** ***"
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputCity" class="form-label">City</label>
+                <select
+                  name="city"
+                  required
+                  id="inputState"
+                  class="form-select"
+                >
+                  <option selected>Choose...</option>
+                  <option>Manchester</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="inputService" class="form-label">Service</label>
+                <select
+                  name="service_type"
+                  required
+                  id="inputService"
+                  class="form-select"
+                >
+                  <option selected>Choose...</option>
+                  <option>End-of-Tenancy</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="tel" class="form-label">Date</label>
+                <input
+                  type="date"
+                  name="booking_date"
+                  class="form-control"
+                  id="inputtel"
+                  placeholder=""
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputZip" class="form-label">Time</label>
+                <input
+                  type="time"
+                  name="booking_time"
+                  class="form-control"
+                  id="inputZip"
+                />
+              </div>
+              <div class="form-floating">
+                <p>Additional Infortmation</p>
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                ></textarea>
+                <label for="floatingTextarea2"
+                  >Please tell us about your cleaning needs</label
+                >
+              </div>
 
-    <div class="col-12">
-      <label for="inputName" class="form-label">Name</label>
-      <input
-        type="text"
-        name="full_name"
-        required
-        class="form-control"
-        id="inputName"
-      />
-    </div>
-
-    <div class="col-6">
-      <label for="inputEmail" class="form-label">Email</label>
-      <input
-        type="email"
-        name="email"
-        required
-        class="form-control"
-        id="inputEmail"
-      />
-    </div>
-
-    <div class="col-6">
-      <label for="inputPhone" class="form-label">Phone</label>
-      <input
-        type="tel"
-        name="phone"
-        required
-        class="form-control"
-        id="inputPhone"
-        placeholder="07 *** ***"
-      />
-    </div>
-
-    <div class="col-6">
-      <label for="inputCity" class="form-label">City</label>
-      <select
-        name="city"
-        required
-        id="inputCity"
-        class="form-select"
-      >
-        <option value="" disabled selected>Choose...</option>
-        <option value="Manchester">Manchester</option>
-      </select>
-    </div>
-
-    <div class="col-6">
-      <label for="inputService" class="form-label">Service</label>
-      <select
-        name="service_type"
-        required
-        id="inputService"
-        class="form-select"
-      >
-        <option value="" disabled selected>Choose...</option>
-        <option value="End-of-Tenancy">End-of-Tenancy</option>
-      </select>
-    </div>
-
-    <div class="col-6">
-      <label for="bookingDate" class="form-label">Date</label>
-      <input
-        type="date"
-        name="booking_date"
-        required
-        class="form-control"
-        id="bookingDate"
-      />
-    </div>
-
-    <div class="col-6">
-      <label for="bookingTime" class="form-label">Time</label>
-      <input
-        type="time"
-        name="booking_time"
-        required
-        class="form-control"
-        id="bookingTime"
-      />
-    </div>
-
-    <div class="form-floating">
-      <p>Additional Information</p>
-      <textarea
-        class="form-control"
-        name="additional_info"
-        id="floatingTextarea2"
-        style="height: 100px"
-      ></textarea>
-      <label for="floatingTextarea2">
-        Please tell us about your cleaning needs
-      </label>
-    </div>
-
-    <button class="btn btn-primary" type="submit">
-      Book
-    </button>
-
-    <p class="text-center">
-      Free estimates • No hidden fees • 100% satisfaction guarantee
-    </p>
-  </form>
-</div>
+              <button class="btn btn-primary" type="submit">Book</button>
+              <p class="text-center">
+                Free estimates • No hidden fees • 100% satisfaction guarantee
+              </p>
+            </form>
+          </div>
         </div>
 
         <div
           class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg hero-card hero-image hero mb-5"
         >
           <div class="card">
-            <img src="/promotional.png" class="card-img" alt="hero-image" />
+            <img src="./promotional.png" class="card-img" alt="hero-image" />
           </div>
         </div>
       </div>
@@ -236,7 +224,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="/insured.svg" />
+              <embed class="svg-size" src="./images/insured.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">Fully Insured & Bonded</h3>
@@ -250,7 +238,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="/team.svg" />
+              <embed class="svg-size" src="./images/team.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">Background-Checked Teams</h3>
@@ -264,7 +252,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="/star.svg" />
+              <embed class="svg-size" src="./images/star.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">
@@ -378,7 +366,7 @@
             </div>
           </div>
           <div class="col-md-4 themed-grid-col prof-team container">
-            <embed class="prof-svg" src="/team.svg" />
+            <embed class="prof-svg" src="./images/team.svg" />
             <h2>Professional Team</h2>
             <p class="lead">Trained and Certified Cleaners</p>
           </div>
@@ -412,7 +400,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="Bootstrap"
                       width="32"
                       height="32"
@@ -452,7 +440,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('/EndOfTenancy.png')"
+              style="background-image: url('./images/EndOfTenancy.png')"
             >
               <div
                 class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
@@ -503,7 +491,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('/deepCleaning.png')"
+              style="background-image: url('./images/deepCleaning.png')"
             >
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
@@ -512,7 +500,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="plandrixlogo"
                       width="32"
                       height="32"
@@ -552,7 +540,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('/constructionC.png')"
+              style="background-image: url('./images/constructionC.png')"
             >
               <div
                 class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
@@ -563,7 +551,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="Bootstrap"
                       width="32"
                       height="32"
@@ -849,15 +837,11 @@
         </header>
 
         <!-- CONTENT -->
-        <div class="areas-grid card">
+        <div class="areas-grid">
           <!-- MAP CARD -->
-          <div
-          class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg hero-card hero-image hero mb-5"
-        >
-          <div class="card">
-            <img src="/promotional.png" class="card-img" alt="hero-image" />
-        
-        
+          <div class="map-card">
+            <img src="./map.avif" alt="Coverage Map" />
+
             <div class="map-footer">
               <div>
                 <strong>Coverage Area</strong>
@@ -866,11 +850,9 @@
               <button class="btn">Check Availability</button>
             </div>
           </div>
-            </div
-          </div>
 
           <!-- EMERGENCY CARD -->
-          <div class="emergency-card container">
+          <div class="emergency-card">
             <div class="emergency-left">
               <span class="icon">📞</span>
               <div>
@@ -900,7 +882,7 @@
 
     <!--Contact Section-->
 
-    <section class="contact-exact container">
+    <section class="contact-exact">
       <h2 class="contact-exact__title">Contact Us</h2>
       <h3 class="contact-exact__subtitle">
         Get in touch for a free consultation
@@ -951,7 +933,7 @@
         </div>
 
         <!-- RIGHT -->
-        <div class="contact-exact__form container">
+        <div class="contact-exact__form">
           <form id="contactForm" action="/contact-form" method="POST">
             <input type="hidden" name="formType" value="contact" />
             <div class="ce-field">
@@ -1020,7 +1002,7 @@
           aria-label="Bootstrap"
         >
           <img
-            src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+            src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
             alt="plandrixlogo"
           />
         </a>
@@ -1122,13 +1104,13 @@
     </footer>
 
     <a href="https://wa.me/+447876039982"
-      ><svg viewBox="0 0 32 32" class="whatsapp-ico container">
+      ><svg viewBox="0 0 32 32" class="whatsapp-ico">
         <path
           d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
           fill-rule="evenodd"
         ></path>
       </svg>
-      </a
+      ></a
     >
 
     <script
@@ -1136,32 +1118,5 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script>
-document.getElementById('bookingForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const form = e.target;
-  const formData = new FormData(form);
-
-  const res = await fetch('https://plandrix.co.uk/contact-form', {
-    method: 'POST',
-    body: formData
-  });
-
-  const text = await res.text();
-  console.log(text);
-
-  if (res.ok) {
-    alert('Booking submitted successfully ✅');
-    form.reset();
-  } else {
-    alert('Submission failed ❌');
-  }
-});
-</script>
-
-
-
-    
   </body>
 </html>
