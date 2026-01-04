@@ -1,78 +1,4 @@
 
-/* =========================
-   GLOBAL MOBILE FIXES
-   ========================= */
-
-/* 1. Stop horizontal scrolling completely */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* 2. Make ALL elements respect screen width */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* 3. Images & media must scale properly */
-img, video, iframe, svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 4. Prevent fixed-width elements from breaking layout */
-section, div, main, header, footer {
-  max-width: 100%;
-}
-
-/* 5. Kill accidental large widths */
-[class*="container"],
-[class*="wrapper"],
-[class*="section"] {
-  max-width: 100%;
-}
-
-/* 6. Fix absolute / fixed positioned elements */
-*[style*="position: fixed"],
-*[style*="position: absolute"] {
-  max-width: 100vw;
-}
-
-/* =========================
-   MOBILE BREAKPOINT
-   ========================= */
-@media (max-width: 768px) {
-
-  /* Remove forced widths */
-  * {
-    width: auto;
-    max-width: 100%;
-  }
-
-  /* Stack columns automatically */
-  .row,
-  .columns,
-  .grid,
-  .flex {
-    flex-direction: column !important;
-  }
-
-  /* Reduce padding that causes overflow */
-  section, div {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  /* Buttons & inputs full width */
-  button,
-  input,
-  select,
-  textarea {
-    width: 100%;
-  }
-}
-
 
 /* Brand Colors & Fonts*/
 :root {
@@ -596,6 +522,17 @@ section {
     bottom: 16px;
     right: 16px;
   }
+}
+
+@media (max-width: 760px) {
+   .coverage-map img,
+   .area-map img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+   }
 }
 
 
