@@ -1,5 +1,4 @@
 
-
 /* Brand Colors & Fonts*/
 :root {
   --brand-primary: #2B5A87;
@@ -523,17 +522,3 @@ section {
     right: 16px;
   }
 }
-
-@media (max-width: 760px) {
-   .coverage-map img,
-   .area-map img {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-   }
-}
-
-
-
