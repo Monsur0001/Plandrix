@@ -30,6 +30,10 @@ body {
   line-height: 1.7;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 h1, h2, h3 h4 {
   font-weight: 600 !important;
 }
@@ -83,7 +87,7 @@ section {
   color: white;
   text-decoration: none;
   font-weight: 500px;
-  border-radius: 50px;
+  border-radius: 20px;
   cursor: pointer;
   transition: var(--brand-secondary) 0.2s ease;
   }
@@ -110,7 +114,52 @@ section {
   padding: 24px;
 }
 .booking-form {
-  height: 650px;
+  height: 700px;
+}
+
+.area-map {
+  background: #ffffff;
+  border-radius: 30px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.check-availability {
+  display: inline-flex;
+}
+
+.btn-avail {
+  margin-left: 50px;
+  padding: 14px 28px 14px 28px;
+  background-color: var(--brand-primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 500px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--brand-secondary) 0.2s ease;
+  height: 70px;
+}
+
+.emergency-bg {
+  background-color: #dc26261a;
+  box-shadow: red;
+  border-radius: 16px;
+}
+
+.emergency-btn {
+  background-color: red;
+  box-shadow: red;
+  color: white;
+  border-color: red;
+  border-radius: 5px;
+}
+
+.contact-form {
+  background-color: white;
+  border-radius: 16px;
 }
 
 
@@ -291,203 +340,13 @@ section {
   color: #555;
 }
 
-/* EMERGENCY CARD */
-.emergency-card {
-  background: #f3caca;
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.1);
-  border-color: red solid;
-  width: 500px;
-}
-
-.emergency-left {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.emergency-left .icon {
-  background: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-}
-
-/* BUTTON */
-.primary-btn {
-  background: #1e293b;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .areas-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .emergency-card {
-    margin-top: 2rem;
-  }
-
-  .map-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-}
-
-.get-ready {
-  background-color: rgb(30 41 59);
-  text-align: center;
-  color: white;
-}
-
-/*Contact us Section*/
-
-/* ===== CONTACT SECTION ONLY ===== */
-
-.contact-exact {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
-
-.contact-exact__title {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.contact-exact__subtitle {
-  text-align: center;
-  color: #666;
-  margin-bottom: 56px;
-}
-
-.contact-exact__layout {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 48px;
-  align-items: start;
-}
-
-/* LEFT SIDE */
-.contact-exact__info {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.contact-exact__item {
-  display: flex;
-  gap: 16px;
-}
-
-.contact-exact__icon {
-  font-size: 20px;
-  color: #1f4e79;
-  line-height: 1.4;
-}
-
-.contact-exact__item strong {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.contact-exact__item p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* RIGHT SIDE FORM CARD */
-.contact-exact__form {
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* FORM GRID */
-.contact-exact__form form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.ce-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.ce-full {
-  grid-column: 1 / -1;
-}
-
-.ce-field label {
-  font-size: 13px;
-  margin-bottom: 6px;
-  color: #555;
-}
-
-.ce-field input,
-.ce-field select,
-.ce-field textarea {
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.ce-field textarea {
-  min-height: 120px;
-  resize: none;
-}
-
-.ce-field input:focus,
-.ce-field select:focus,
-.ce-field textarea:focus {
-  outline: none;
-  border-color: #1f4e79;
-}
-
-/* BUTTON */
-.contact-exact__form button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  background: #1f4e79;
-  color: #fff;
-  border: none;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.contact-exact__form button:hover {
-  background: #163c5f;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .contact-exact__layout {
-    grid-template-columns: 1fr;
-  }
+.icon-50 {
+  font-size: 50px;
+  color: var(--brand-primary);
 }
 
 .footer {
-  background-color: #1e293b;
+  background-color: var(--brand-primary);
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
   font-size: 14px;
