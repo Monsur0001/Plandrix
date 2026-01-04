@@ -81,11 +81,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero-section" class="hero-section container">
+    <section id="hero-section" class="hero-section container-fluid">
       <div
-        class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+        class="row pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3"
       >
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3 container">
           <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
             Professional End-of-Tenancy, Office, Communal & Commercial Cleaning
             in <br />
@@ -102,7 +102,7 @@
 
           <!-- Instant Booking Widget-->
 
-          <div class="booking-form">
+          <div class="booking-form container">
             <h2>Book Your Cleaning Service</h2>
             <form
               method="POST"
@@ -139,7 +139,7 @@
                   required
                   class="form-control"
                   id="inputtel"
-                  placeholder=""
+                  placeholder="07 *** ***"
                 />
               </div>
               <div class="col-6">
@@ -217,14 +217,14 @@
     </section>
 
     <!--Features-->
-    <section class="my-features">
+    <section class="my-features container-fluid">
       <div class="container">
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div class="col d-flex align-items-start">
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="./images/insured.svg" />
+              <embed class="svg-size" src="/insured.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">Fully Insured & Bonded</h3>
@@ -238,7 +238,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="./images/team.svg" />
+              <embed class="svg-size" src="/team.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">Background-Checked Teams</h3>
@@ -252,7 +252,7 @@
             <div
               class="mt-5 icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
             >
-              <embed class="svg-size" src="./images/star.svg" />
+              <embed class="svg-size" src="/star.svg" />
             </div>
             <div>
               <h3 class="text-body-emphasis mt-5">
@@ -491,7 +491,7 @@
           <div class="col">
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('/images/deepCleaning.png')"
+              style="background-image: url('/deepCleaning.png')"
             >
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
@@ -500,7 +500,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="plandrixlogo"
                       width="32"
                       height="32"
@@ -551,7 +551,7 @@
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
                     <img
-                      src="/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
+                      src="./images/Blue Black Minimal Modern Professional Letter F Company Logo.jpg"
                       alt="Bootstrap"
                       width="32"
                       height="32"
@@ -823,174 +823,257 @@
     </section>
     <!--Areas we covers-->
 
-    <section class="">
-      <div class="container">
-        <!-- TEXT -->
-        <header class="areas-header">
-          <h2>Areas We Cover</h2>
-          <p>
+    <section class="container">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+            Areas We Cover
+          </h1>
+          <p class="lead">
             We provide cleaning services across Greater Manchester and
             Lancashire, including Manchester, Salford, Bolton, Bury, Oldham,
             Rochdale, Wigan, Leigh, Preston, Blackburn, Burnley, Leyland and
             surrounding areas.
           </p>
-        </header>
+          <div
+            class="col-lg-10 offset-lg-1 p-0 overflow-hidden area-map container"
+          >
+            <img class="rounded-lg-3" src="/map.avif" alt="" width="720" />
 
-        <!-- CONTENT -->
-        <div class="areas-grid">
-          <!-- MAP CARD -->
-          <div class="map-card container">
-            <img src="/map.avif" alt="Coverage Map" />
-
-            <div class="map-footer">
-              <div>
-                <strong>Coverage Area</strong>
-                <span>Greater Manchester & Lancashire served</span>
+            <div
+              class="modal modal-sheet position-static d-block p-4 py-md-5"
+              tabindex="-1"
+              role="dialog"
+              id="modalChoice"
+            >
+              <div class="">
+                <div class="modal-content rounded-3">
+                  <div class="modal-body mt-1 text-center">
+                    <h5 class="mb-0">Coverage Area</h5>
+                    <p class="mb-0">Greater Manchester & Lancashire served.</p>
+                  </div>
+                  <div class="flex-nowrap p-0">
+                    <button
+                      type="button"
+                      class="btn btn-lg btn-link fs-6 text-decoration-none col-12 py-3 m-0 rounded-0 border-end"
+                    >
+                      <strong>Check Availability</strong>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <button class="btn">Check Availability</button>
             </div>
-          </div>
-
-          <!-- EMERGENCY CARD -->
-          <div class="emergency-card container">
-            <div class="emergency-left">
-              <span class="icon">📞</span>
-              <div>
-                <strong>Emergency Cleaning Services</strong>
-                <p>Available 24/7 for urgent situations</p>
-              </div>
-            </div>
-            <button class="btn">Call Now</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="get-ready">
-      <div class="get-ready">
-        <h2 class="">Ready to Get Started?</h2>
-        <h4 class="get-ready-parag">
-          Book your cleaning service today and experience the Plandrix
-          difference
-        </h4>
-        <br />
-        <div class="">
-          <button class="btn">Get Free Estimate</button>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
+          <div
+            class="modal modal-sheet position-static d-block py-md-5"
+            tabindex="-1"
+            role="dialog"
+            id="modalChoice"
+          >
+            <div class="modal-dialog emergency-bg border border-danger">
+              <div class="modal-conten rounded-3">
+                <div class="modal-bo p-4 text-center">
+                  <h5 class="mb-0">Emergency Cleaning Services</h5>
+                  <p class="mb-0 mt-2">
+                    24/7 availability for urgent cleaning and disaster cleanup.
+                  </p>
+                </div>
+                <div class="modal-footer flex-nowrap p-0">
+                  <button
+                    type="button"
+                    class="emergency-btn btn-outline-danger"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-telephone"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                      ></path>
+                    </svg>
+                    Call Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!--Contact Section-->
 
-    <section class="contact-exact container">
-      <h2 class="contact-exact__title">Contact Us</h2>
-      <h3 class="contact-exact__subtitle">
-        Get in touch for a free consultation
-      </h3>
-      <br />
+    <!--NEW CONTACT-->
 
-      <div class="contact-exact__layout container">
-        <!-- LEFT -->
-        <div class="contact-exact__info">
-          <div class="contact-exact__item">
-            <span class="contact-exact__icon">📍</span>
+    <div class="row mb-3 text-center container">
+      <div class="col-md-7 themed-grid-col container">
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5 container"
+        >
+          <div class="col align-items-start container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              class="bi bi-house-door icon-50 container"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"
+              />
+              <path
+                d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+              />
+            </svg>
             <div>
-              <strong>Address</strong>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Address</h3>
               <p>
-                9, Bartle House, Oxford Court,<br />
-                Manchester, United Kingdom, M2 3WQ
+                9, Bartle House, Oxford Court, Manchester, United Kingdom, M2
+                3WQ.
               </p>
             </div>
           </div>
-
-          <div class="contact-exact__item">
-            <span class="contact-exact__icon">📞</span>
+          <div class="col align-items-start container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              class="bi bi-telephone icon-50"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+              />
+            </svg>
             <div>
-              <strong>Phone</strong>
-              <p>07876 039982</p>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Phone</h3>
+              <p>07876039982</p>
             </div>
           </div>
-
-          <div class="contact-exact__item">
-            <span class="contact-exact__icon">✉️</span>
+          <div class="col align-items-start container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              class="bi bi-envelope-at-fill icon-50"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"
+              />
+              <path
+                d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"
+              />
+            </svg>
             <div>
-              <strong>Email</strong>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Email</h3>
               <p>info@plandrix.co.uk</p>
             </div>
           </div>
-
-          <div class="contact-exact__item">
-            <span class="contact-exact__icon">🕒</span>
+          <div class="col align-items-start container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              class="bi bi-alarm icon-50"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z"
+              />
+              <path
+                d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1"
+              />
+            </svg>
             <div>
-              <strong>Hours</strong>
-              <p>
-                Mon–Fri: 7:00AM – 10:00PM<br />
-                Sat: 10:00AM – 6:00PM<br />
-                Sun: Closed
-              </p>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Hours</h3>
+              <p>Mon-Fri: 7:00AM - 10:00PM Sat: 10:00AM-6:00PM Sun: Closed</p>
             </div>
           </div>
         </div>
-
-        <!-- RIGHT -->
-        <div class="contact-exact__form">
-          <form id="contactForm" action="/contact-form" method="POST">
-            <input type="hidden" name="formType" value="contact" />
-            <div class="ce-field">
-              <label>First Name</label>
-              <input
-                type="text"
-                name="first_name"
-                required
-                placeholder="John"
-              />
-            </div>
-
-            <div class="ce-field">
-              <label>Last Name</label>
-              <input type="text" name="last_name" required placeholder="Doe" />
-            </div>
-
-            <div class="ce-field ce-full">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="john@example.com"
-              />
-            </div>
-
-            <div class="ce-field ce-full">
-              <label>Phone</label>
-              <input type="tel" name="phone" placeholder="(555) 123-4567" />
-            </div>
-
-            <div class="ce-field ce-full">
-              <label>Service Type</label>
-              <select name="service_type">
-                <option>End of Tenancy Cleaning</option>
-                <option>Commercial Cleaning</option>
-                <option>Deep Cleaning</option>
-              </select>
-            </div>
-
-            <div class="ce-field ce-full">
-              <label>Message</label>
-              <textarea
-                name="message"
-                required
-                placeholder="Tell us about your cleaning needs..."
-              ></textarea>
-            </div>
-
-            <div class="ce-field ce-full">
-              <button type="submit">Send Message</button>
-            </div>
-          </form>
-        </div>
       </div>
-    </section>
+      <div class="col-md-5 themed-grid-col booking-form">
+        <form
+              method="POST"
+              action="https://plandrix.co.uk/contact-form"
+              class="row g-3"
+            >
+              <input type="hidden" name="formType" value="booking" />
+              <input type="hidden" name="booking_time" id="booking_time" />
+              <div class="col-12">
+                <label for="inputName" class="form-label">Name / Company</label>
+                <input
+                  type="text"
+                  name="full_name"
+                  required
+                  class="form-control"
+                  id="inputName"
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="form-control"
+                  id="inputEmail"
+                />
+              </div>
+              <div class="col-6">
+                <label for="tel" class="form-label">phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  class="form-control"
+                  id="inputtel"
+                  placeholder="07 *** ***"
+                />
+              </div>
+             
+              <div class="col-6">
+                <label for="inputService" class="form-label">Service</label>
+                <select
+                  name="service_type"
+                  required
+                  id="inputService"
+                  class="form-select"
+                >
+                  <option selected>Choose...</option>
+                  <option>End-of-Tenancy</option>
+                </select>
+              </div>
+             
+             
+              <div class="form-floating">
+                <p>Message</p>
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                ></textarea>
+                <label for="floatingTextarea2"
+                  >Please tell us about your cleaning needs</label
+                >
+              </div>
+
+              <button class="btn btn-primary" type="submit">Send</button>
+              
+            </form>
+      </div>
+    </div>
 
     <footer
       class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top footer"
