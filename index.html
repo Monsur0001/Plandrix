@@ -1282,88 +1282,107 @@
   
 
 <script>
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
+  if (!contactForm) return;
 
-  const payload = {
-    type: "contact",
-    full_name: contactName.value,
-    email: contactEmail.value,
-    phone: contactPhone.value,
-    service: contactService.value,
-    message: contactMessage.value,
-  };
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  console.log("CONTACT →", payload);
+    const payload = {
+      type: "contact",
+      full_name: document.getElementById("contactName").value.trim(),
+      email: document.getElementById("contactEmail").value.trim(),
+      phone: document.getElementById("contactPhone").value.trim(),
+      service: document.getElementById("contactService").value,
+      message: document.getElementById("contactMessage").value.trim()
+    };
 
-  const res = await fetch(
-    "https://send-email.monsuromotunde-abdulrahman.workers.dev/",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+    console.log("CONTACT PAYLOAD →", payload);
+
+    try {
+      const res = await fetch(
+        "https://send-email.monsuromotunde-abdulrahman.workers.dev/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!res.ok) throw new Error("Request failed");
+
+      showToast(
+        "Message sent successfully! We’ll get back to you soon 💬✨",
+        "success",
+        true
+      );
+
+      contactForm.reset();
+    } catch (err) {
+      console.error(err);
+      showToast(
+        "Message could not be sent. Please try again.",
+        "error"
+      );
     }
-  );
-
-  if (res.ok) {
-  showToast(
-    "Message sent successfully! We’ll get back to you soon 💬✨",
-    "success",
-    true
-  );
-  e.target.reset();
-} else {
-  showToast(
-    "Message could not be sent. Please try again.",
-    "error"
-  );
-}
-
+  });
+});
 </script>
 
 
 <script>
-document.getElementById("bookingForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const bookingForm = document.getElementById("bookingForm");
+  if (!bookingForm) return;
 
-  const payload = {
-    type: "booking",
-    full_name: inputName.value,
-    email: inputEmail.value,
-    phone: inputPhone.value,
-    service: bookingService.value,
-    city: bookingCity.value,
-    date: bookingDate.value,
-    time: bookingTime.value,
-    message: inputMessage.value,
-  };
+  bookingForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  console.log("BOOKING →", payload);
+    const payload = {
+      type: "booking",
+      full_name: document.getElementById("inputName").value.trim(),
+      email: document.getElementById("inputEmail").value.trim(),
+      phone: document.getElementById("inputPhone").value.trim(),
+      service: document.getElementById("bookingService").value,
+      city: document.getElementById("bookingCity").value,
+      date: document.getElementById("bookingDate").value,
+      time: document.getElementById("bookingTime").value,
+      message: document.getElementById("inputMessage").value.trim()
+    };
 
-  const res = await fetch(
-    "https://send-email.monsuromotunde-abdulrahman.workers.dev/",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+    console.log("BOOKING PAYLOAD →", payload);
+
+    try {
+      const res = await fetch(
+        "https://send-email.monsuromotunde-abdulrahman.workers.dev/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!res.ok) throw new Error("Request failed");
+
+      showToast(
+        "Booking submitted successfully! We’ll contact you shortly 📅✨",
+        "success",
+        true
+      );
+
+      bookingForm.reset();
+    } catch (err) {
+      console.error(err);
+      showToast(
+        "Booking failed. Please try again later.",
+        "error"
+      );
     }
-  );
-
-  if (res.ok) {
-  showToast(
-    "Booking submitted successfully! We’ll contact you shortly 📅✨",
-    "success",
-    true
-  );
-  e.target.reset();
-} else {
-  showToast(
-    "Booking failed. Please try again later.",
-    "error"
-  );
-}
-
+  });
+});
 </script>
+
 <script>
 function showToast(message, type = "success", redirect = false, delay = 3000) {
   const toast = document.getElementById("toast");
