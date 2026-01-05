@@ -103,8 +103,8 @@
           <div class="booking-form container">
             <h2>Book Your Cleaning Service</h2>
             <form
+              id="bookingForm"
               method="POST"
-              action="https://plandrix.co.uk/contact-form"
               class="row g-3"
             >
               <input type="hidden" name="formType" value="booking" />
@@ -1081,8 +1081,8 @@
         </div>
         <div class="col-md-5 themed-grid-col booking-form">
           <form
+            id="contactForm"
             method="POST"
-            action="https://plandrix.co.uk/contact-form"
             class="row g-3"
           >
             <input type="hidden" name="formType" value="contact" />
@@ -1277,32 +1277,69 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script>
-document.querySelector("form").addEventListener("submit", async (e) => {
+  
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.target;
 
-  const payload = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value
-  };
-
-  const res = await fetch("https://send-email.YOURNAME.workers.dev", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
+  const res = await fetch(
+    "https://send-email.monsuromotunde-abdulrahman.workers.dev",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "contact",
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      })
+    }
+  );
 
   if (res.ok) {
-    alert("Message sent!");
+    alert("Message sent successfully ✅");
     form.reset();
   } else {
-    alert("Failed to send message");
+    alert("Failed to send ❌");
   }
 });
 </script>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const res = await fetch(
+    "https://send-email.monsuromotunde-abdulrahman.workers.dev",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "booking",
+        name: form.name.value,
+        email: form.email.value,
+        service: form.service.value,
+        date: form.date.value,
+        message: form.message.value
+      })
+    }
+  );
+
+  if (res.ok) {
+    alert("Booking sent successfully ✅");
+    form.reset();
+  } else {
+    alert("Booking failed ❌");
+  }
+});
+</script>
+
+
 
   </body>
 </html>
