@@ -111,6 +111,7 @@
               <div class="col-12">
                 <label class="form-label">Name</label>
                 <input
+                  
                   type="text"
                   name="full_name"
                   required
@@ -135,7 +136,7 @@
                   name="phone"
                   required
                   class="form-control"
-                  id="inputtel"
+                  id="inputPhone"
                   placeholder=""
                 />
               </div>
@@ -144,7 +145,7 @@
                 <select
                   name="city"
                   required
-                  id="inputState"
+                  id="bookingCity"
                   class="form-select"
                 >
                   <option value="">Choose...</option>
@@ -156,7 +157,7 @@
                 <select
                   name="service_type"
                   required
-                  id="inputService"
+                  id="bookingService"
                   class="form-select"
                 >
                   <option value="">Choose...</option>
@@ -169,7 +170,7 @@
                   type="date"
                   name="booking_date" required
                   class="form-control"
-                  id="inputtel"
+                  id="bookingDate"
                   placeholder=""
                 />
               </div>
@@ -179,7 +180,7 @@
                   type="time"
                   name="booking_time" required
                   class="form-control"
-                  id="inputTime"
+                  id="bookingTime"
                 />
               </div>
               <div class="form-floating">
@@ -188,7 +189,7 @@
                   name="message"
                   class="form-control"
                   placeholder="Leave a comment here"
-                  id="floatingTextarea2"
+                  id="inputMessage"
                   style="height: 100px"
                 ></textarea>
                 <label for="floatingTextarea2"
@@ -1094,7 +1095,7 @@
                 name="full_name"
                 required
                 class="form-control"
-                id="inputName"
+                id="contactName"
               />
             </div>
             <div class="col-6">
@@ -1104,7 +1105,7 @@
                 name="email"
                 required
                 class="form-control"
-                id="inputEmail"
+                id="contactEmail"
               />
             </div>
             <div class="col-6">
@@ -1114,7 +1115,7 @@
                 name="phone"
                 required
                 class="form-control"
-                id="inputtel"
+                id="contactPhone"
                 placeholder=""
               />
             </div>
@@ -1124,7 +1125,7 @@
               <select
                 name="service_type"
                 required
-                id="inputService"
+                id="contactService"
                 class="form-select"
               >
                 <option value="">Choose...</option>
@@ -1138,7 +1139,7 @@
                 name="message" required
                 class="form-control"
                 placeholder="Leave a comment here"
-                id="floatingTextarea2"
+                id="contactMessage"
                 style="height: 100px"
               ></textarea>
               <label for="floatingTextarea2"
@@ -1283,73 +1284,64 @@
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const form = e.target;
+  const payload = {
+    type: "contact",
+    full_name: contactName.value,
+    email: contactEmail.value,
+    phone: contactPhone.value,
+    service: contactService.value,
+    message: contactMessage.value,
+  };
+
+  console.log("CONTACT →", payload);
 
   const res = await fetch(
-    "https://send-email.monsuromotunde-abdulrahman.workers.dev",
+    "https://send-email.monsuromotunde-abdulrahman.workers.dev/",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        type: "contact",
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-      })
+      body: JSON.stringify(payload),
     }
   );
 
-  if (res.ok) {
-    alert("Message sent successfully ✅");
-    form.reset();
-  } else {
-    alert("Failed to send ❌");
-  }
+  alert(res.ok ? "Message sent ✅" : "Failed ❌");
+  if (res.ok) e.target.reset();
 });
 </script>
+
 
 <script>
 document.getElementById("bookingForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const form = e.target;
-
   const payload = {
     type: "booking",
-    full_name: form.elements["full_name"]?.value || "",
-    email: form.elements["email"]?.value || "",
-    phone: form.elements["phone"]?.value || "",
-    date: form.elements["date"]?.value || "",
-    time: form.elements["time"]?.value || "",
-    message: form.elements["message"]?.value || ""
+    full_name: inputName.value,
+    email: inputEmail.value,
+    phone: inputPhone.value,
+    service: bookingService.value,
+    city: bookingCity.value,
+    date: bookingDate.value,
+    time: bookingTime.value,
+    message: inputMessage.value,
   };
 
-  // HARD validation
-  if (!payload.full_name || !payload.email || !payload.phone) {
-    alert("Missing required fields ❌");
-    return;
-  }
+  console.log("BOOKING →", payload);
 
-  try {
-    const res = await fetch(
-      "https://send-email.monsuromotunde-abdulrahman.workers.dev",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      }
-    );
+  const res = await fetch(
+    "https://send-email.monsuromotunde-abdulrahman.workers.dev/",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }
+  );
 
-    if (!res.ok) throw new Error("Request failed");
-
-    alert("Booking sent successfully ✅");
-    form.reset();
-  } catch (err) {
-    console.error(err);
-    alert("Something went wrong ❌");
-  }
+  alert(res.ok ? "Booking sent ✅" : "Failed ❌");
+  if (res.ok) e.target.reset();
 });
 </script>
+
 
 
 
