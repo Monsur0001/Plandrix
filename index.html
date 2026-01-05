@@ -109,7 +109,7 @@
             >
               <input type="hidden" name="formType" value="booking" />
               <div class="col-12">
-                <label for="inputName" class="form-label">Name</label>
+                <label class="form-label">Name</label>
                 <input
                   type="text"
                   name="full_name"
@@ -119,7 +119,7 @@
                 />
               </div>
               <div class="col-6">
-                <label for="inputEmail" class="form-label">Email</label>
+                <label class="form-label">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -129,62 +129,63 @@
                 />
               </div>
               <div class="col-6">
-                <label for="tel" class="form-label">phone</label>
+                <label class="form-label">phone</label>
                 <input
                   type="tel"
                   name="phone"
                   required
                   class="form-control"
                   id="inputtel"
-                  placeholder="07 *** ***"
+                  placeholder=""
                 />
               </div>
               <div class="col-6">
-                <label for="inputCity" class="form-label">City</label>
+                <label class="form-label">City</label>
                 <select
                   name="city"
                   required
                   id="inputState"
                   class="form-select"
                 >
-                  <option selected>Choose...</option>
-                  <option>Manchester</option>
+                  <option value="">Choose...</option>
+                  <option value="Manchester">Manchester</option>
                 </select>
               </div>
               <div class="col-6">
-                <label for="inputService" class="form-label">Service</label>
+                <label class="form-label">Service</label>
                 <select
                   name="service_type"
                   required
                   id="inputService"
                   class="form-select"
                 >
-                  <option selected>Choose...</option>
-                  <option>End-of-Tenancy</option>
+                  <option value="">Choose...</option>
+                  <option value="End-of-Tenancy">End-of-Tenancy</option>
                 </select>
               </div>
               <div class="col-6">
-                <label for="tel" class="form-label">Date</label>
+                <label class="form-label">Date</label>
                 <input
                   type="date"
-                  name="booking_date"
+                  name="booking_date" required
                   class="form-control"
                   id="inputtel"
                   placeholder=""
                 />
               </div>
               <div class="col-6">
-                <label for="inputZip" class="form-label">Time</label>
+                <label class="form-label">Time</label>
                 <input
                   type="time"
-                  name="booking_time"
+                  name="booking_time" required
                   class="form-control"
-                  id="inputZip"
+                  id="inputTime"
                 />
               </div>
               <div class="form-floating">
-                <p>Additional Infortmation</p>
+                <p>Message</p>
                 <textarea
+                  name="message"
                   class="form-control"
                   placeholder="Leave a comment here"
                   id="floatingTextarea2"
@@ -195,7 +196,7 @@
                 >
               </div>
 
-              <button class="btn btn-primary" type="submit">Book</button>
+              <button type="submit" class="btn btn-primary" type="submit">Book</button>
               <p class="text-center">
                 Free estimates • No hidden fees • 100% satisfaction guarantee
               </p>
@@ -1087,7 +1088,7 @@
             <input type="hidden" name="formType" value="contact" />
             
             <div class="col-12">
-              <label for="inputName" class="form-label">Name / Company</label>
+              <label class="form-label">Name / Company</label>
               <input
                 type="text"
                 name="full_name"
@@ -1097,7 +1098,7 @@
               />
             </div>
             <div class="col-6">
-              <label for="inputEmail" class="form-label">Email</label>
+              <label class="form-label">Email</label>
               <input
                 type="email"
                 name="email"
@@ -1107,33 +1108,34 @@
               />
             </div>
             <div class="col-6">
-              <label for="tel" class="form-label">phone</label>
+              <label class="form-label">phone</label>
               <input
                 type="tel"
                 name="phone"
                 required
                 class="form-control"
                 id="inputtel"
-                placeholder="07 *** ***"
+                placeholder=""
               />
             </div>
 
             <div class="col-12">
-              <label for="inputService" class="form-label">Service</label>
+              <label class="form-label">Service</label>
               <select
                 name="service_type"
                 required
                 id="inputService"
                 class="form-select"
               >
-                <option selected>Choose...</option>
-                <option>End-of-Tenancy</option>
+                <option value="">Choose...</option>
+                <option value="End-of-Tenancy">End-of-Tenancy</option>
               </select>
             </div>
 
             <div class="form-floating">
               <p>Message</p>
               <textarea
+                name="message" required
                 class="form-control"
                 placeholder="Leave a comment here"
                 id="floatingTextarea2"
@@ -1144,7 +1146,7 @@
               >
             </div>
 
-            <button class="btn btn-primary" type="submit">Send</button>
+            <button type="submit" class="btn btn-primary" type="submit">Send</button>
           </form>
         </div>
       </div>
