@@ -23,7 +23,7 @@ export async function onRequestPost({ request, env }) {
       },
       body: JSON.stringify({
         from: "Plandrix <no-reply@plandrix.co.uk>",
-        to: ["hello@plandrix.co.uk"],
+        to: ["info@plandrix.co.uk"],
         reply_to: email,
         subject: `New Contact Form: ${name}`,
         html: `
