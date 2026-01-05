@@ -1386,9 +1386,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 function showToast(message, type = "success", redirect = false, delay = 3000) {
   const toast = document.getElementById("toast");
+  if (!toast) return;
 
   toast.textContent = message;
-  toast.className = `toast show ${type}`;
+
+  toast.classList.remove("success", "error");
+  toast.classList.add("show", type);
 
   setTimeout(() => {
     toast.classList.remove("show");
