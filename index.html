@@ -1314,27 +1314,39 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
 
   const form = e.target;
 
-  const res = await fetch(
-    "https://send-email.monsuromotunde-abdulrahman.workers.dev",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        type: "booking",
-        name: form.name.value,
-        email: form.email.value,
-        service: form.service.value,
-        date: form.date.value,
-        message: form.message.value
-      })
-    }
-  );
+  const payload = {
+    type: "booking",
+    full_name: form.elements["full_name"]?.value || "",
+    email: form.elements["email"]?.value || "",
+    phone: form.elements["phone"]?.value || "",
+    date: form.elements["date"]?.value || "",
+    time: form.elements["time"]?.value || "",
+    message: form.elements["message"]?.value || ""
+  };
 
-  if (res.ok) {
+  // HARD validation
+  if (!payload.full_name || !payload.email || !payload.phone) {
+    alert("Missing required fields ❌");
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      "https://send-email.monsuromotunde-abdulrahman.workers.dev",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }
+    );
+
+    if (!res.ok) throw new Error("Request failed");
+
     alert("Booking sent successfully ✅");
     form.reset();
-  } else {
-    alert("Booking failed ❌");
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong ❌");
   }
 });
 </script>
