@@ -1272,6 +1272,7 @@
         ></path>
       </svg>
     </a>
+    <div id="toast" class="toast"></div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -1304,9 +1305,20 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     }
   );
 
-  alert(res.ok ? "Message sent ✅" : "Failed ❌");
-  if (res.ok) e.target.reset();
-});
+  if (res.ok) {
+  showToast(
+    "Message sent successfully! We’ll get back to you soon 💬✨",
+    "success",
+    true
+  );
+  e.target.reset();
+} else {
+  showToast(
+    "Message could not be sent. Please try again.",
+    "error"
+  );
+}
+
 </script>
 
 
@@ -1337,10 +1349,38 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
     }
   );
 
-  alert(res.ok ? "Booking sent ✅" : "Failed ❌");
-  if (res.ok) e.target.reset();
-});
+  if (res.ok) {
+  showToast(
+    "Booking submitted successfully! We’ll contact you shortly 📅✨",
+    "success",
+    true
+  );
+  e.target.reset();
+} else {
+  showToast(
+    "Booking failed. Please try again later.",
+    "error"
+  );
+}
+
 </script>
+<script>
+function showToast(message, type = "success", redirect = false, delay = 3000) {
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.className = `toast show ${type}`;
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+
+    if (redirect) {
+      window.location.href = "/";
+    }
+  }, delay);
+}
+</script>
+
 
 
 
